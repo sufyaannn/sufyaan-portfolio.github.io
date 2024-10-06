@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5501/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./Calculator App_files/style.css">
+</head>
+<body>
+
+<div class="container">
+ 
+  <div class="calculator">
+    <form>
+      <div class="display">
+        
+        <input type="text" name="display">
+      </div>
+      <div>
+        <input type="button" value="AC" onclick="display.value = &#39;&#39; " class="operator">
+        <input type="button" value="DE" onclick="display.value =  display.value.toString().slice(0,-1)" class="operator">
+        <input type="button" value="." onclick="display.value += &#39;.&#39; " class="operator">
+        <input type="button" value="/" onclick="display.value += &#39;/&#39; " class="operator">
+      </div>
+      <div>
+        <input type="button" value="7" onclick="display.value += &#39;7&#39; ">
+        <input type="button" value="8" onclick="display.value += &#39;8&#39; ">
+        <input type="button" value="9" onclick="display.value += &#39;9&#39; ">
+        <input type="button" value="*" onclick="display.value += &#39;*&#39; " class="operator">
+      </div>
+      <div>
+        <input type="button" value="4" onclick="display.value += &#39;4&#39; ">
+        <input type="button" value="5" onclick="display.value += &#39;5&#39; ">
+        <input type="button" value="6" onclick="display.value += &#39;6&#39; ">
+        <input type="button" value="-" onclick="display.value += &#39;-&#39; " class="operator">
+      </div>
+      <div>
+        <input type="button" value="1" onclick="display.value += &#39;1&#39; ">
+        <input type="button" value="2" onclick="display.value += &#39;2&#39; ">
+        <input type="button" value="3" onclick="display.value += &#39;3&#39; ">
+        <input type="button" value="+" onclick="display.value += &#39;+&#39; " class="operator">
+      </div>
+      <div>
+        <input type="button" value="00" onclick="display.value += &#39;00&#39; ">
+        <input type="button" value="0" onclick="display.value += &#39;0&#39; ">
+        <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal operator">
+       
+      </div>
+    </form>
+  </div>
+</div>
+<footer style="text-align: center; padding: 20px; background-color: #f1f1f1; border-top: 1px solid #ddd;">
+  <p style="margin-bottom: 10px;">Made with ❤️ by Mohammad Sufyaan</p>
+  <p>© 2024 Mohammad Sufyaan. All rights reserved.</p>
+</footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
